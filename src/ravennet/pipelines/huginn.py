@@ -5,8 +5,11 @@ Handles data gathering, processing, and initial analysis.
 """
 
 import logging
-from typing import Dict, Any
+from typing import Dict, Any, TYPE_CHECKING
 from datetime import datetime
+
+if TYPE_CHECKING:
+    from ..config import Config
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +24,7 @@ class HuginnPipeline:
     - Preliminary analysis
     """
 
-    def __init__(self, config):
+    def __init__(self, config: "Config"):
         """
         Initialize Huginn pipeline.
 
