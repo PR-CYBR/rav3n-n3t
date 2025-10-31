@@ -1,0 +1,30 @@
+# RavenNet Configuration Example
+#
+# This file shows available configuration options for RavenNet.
+# Copy this to 'config.yaml' and customize as needed.
+
+pipelines:
+  # Huginn (Thought) Pipeline Configuration
+  huginn:
+    enabled: true
+    timeout: 3600  # seconds
+    retry_count: 3
+  
+  # Muninn (Memory) Pipeline Configuration
+  muninn:
+    enabled: true
+    timeout: 3600  # seconds
+    retry_count: 3
+
+# Output Configuration
+output:
+  directory: "./reports"
+  archive: true
+  format: "json"  # json, yaml, or both
+
+# Notification Configuration
+notifications:
+  on_failure: true
+  on_success: false
+  # email: user@example.com  # Optional: email for notifications
+  # slack_webhook: https://...  # Optional: Slack webhook URL
